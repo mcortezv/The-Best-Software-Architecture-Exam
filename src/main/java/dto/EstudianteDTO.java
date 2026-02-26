@@ -1,5 +1,4 @@
 package dto;
-import dominio.Materia;
 import java.util.List;
 
 public class EstudianteDTO {
@@ -8,11 +7,11 @@ public class EstudianteDTO {
     private String correo;
     private String carrera;
     private int semestreInscrito;
-    private List<Materia> materias;
+    private List<MateriaDTO> materias;
 
     public EstudianteDTO() {}
 
-    public EstudianteDTO(int id, String nombre, String correo, String carrera, int semestreInscrito, List<Materia> materias) {
+    public EstudianteDTO(int id, String nombre, String correo, String carrera, int semestreInscrito, List<MateriaDTO> materias) {
         this.id = id;
         this.nombre = nombre;
         this.correo = correo;
@@ -45,11 +44,11 @@ public class EstudianteDTO {
         this.carrera = carrera;
     }
 
-    public List<Materia> getMaterias() {
+    public List<MateriaDTO> getMaterias() {
         return materias;
     }
 
-    public void setMaterias(List<Materia> materias) {
+    public void setMaterias(List<MateriaDTO> materias) {
         this.materias = materias;
     }
 
