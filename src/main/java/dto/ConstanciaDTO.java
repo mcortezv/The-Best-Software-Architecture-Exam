@@ -1,12 +1,8 @@
 package dto;
-
-import dominio.Estudiante;
-import dominio.Materia;
-
 import java.time.LocalDate;
 
 public class ConstanciaDTO {
-    private Estudiante estudiante;
+    private EstudianteDTO estudiante;
     private int cicloLectivo;
     private LocalDate cicloFechaInicio;
     private LocalDate cicloFechaFin;
@@ -16,7 +12,7 @@ public class ConstanciaDTO {
 
     public ConstanciaDTO() {}
 
-    public ConstanciaDTO(Estudiante estudiante, int cicloLectivo, LocalDate cicloFechaInicio,  LocalDate cicloFechaFin, LocalDate fechaConstancia) {
+    public ConstanciaDTO(EstudianteDTO estudiante, int cicloLectivo, LocalDate cicloFechaInicio,  LocalDate cicloFechaFin, LocalDate fechaConstancia) {
         this.estudiante = estudiante;
         this.cicloLectivo = cicloLectivo;
         this.cicloFechaInicio = cicloFechaInicio;
@@ -48,11 +44,11 @@ public class ConstanciaDTO {
         this.cicloLectivo = cicloLectivo;
     }
 
-    public Estudiante getEstudiante() {
+    public EstudianteDTO getEstudiante() {
         return estudiante;
     }
 
-    public void setEstudiante(Estudiante estudiante) {
+    public void setEstudiante(EstudianteDTO estudiante) {
         this.estudiante = estudiante;
     }
 
@@ -79,7 +75,7 @@ public class ConstanciaDTO {
         }
         String materiasTexto = "";
         if (estudiante.getMaterias() != null && !estudiante.getMaterias().isEmpty()) {
-            for (Materia materia : estudiante.getMaterias()) {
+            for (MateriaDTO materia : estudiante.getMaterias()) {
                 materiasTexto += "- "
                         + materia.getCodigo() + " "
                         + materia.getNombre() + " "
