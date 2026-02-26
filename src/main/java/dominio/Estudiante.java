@@ -5,15 +5,17 @@ public class Estudiante {
     private int id;
     private String nombre;
     private String correo;
+    private String carrera;
     private int semestreInscrito;
     private List<Materia> materias;
 
     public Estudiante() {}
 
-    public Estudiante(int id, String nombre, String correo, int semestreInscrito, List<Materia> materias) {
+    public Estudiante(int id, String nombre, String correo, String carrera, int semestreInscrito, List<Materia> materias) {
         this.id = id;
         this.nombre = nombre;
         this.correo = correo;
+        this.carrera = carrera;
         this.semestreInscrito = semestreInscrito;
         this.materias = materias;
     }
@@ -32,6 +34,14 @@ public class Estudiante {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getCarrera() {
+        return carrera;
+    }
+
+    public void setCarrera(String carrera) {
+        this.carrera = carrera;
     }
 
     public List<Materia> getMaterias() {
