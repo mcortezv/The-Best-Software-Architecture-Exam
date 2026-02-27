@@ -5,7 +5,7 @@ public interface IDominio {
 
     List<Estudiante> getEstudiantes();
 
-    List<Estudiante> getEstudiantesFiltro(int filtro);
+    List<Estudiante> getEstudiantesFiltro(String filtro);
 
     Constancia generarConstancia(Estudiante estudiante);
 }

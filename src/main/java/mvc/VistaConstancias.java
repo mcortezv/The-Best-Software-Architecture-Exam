@@ -1,5 +1,6 @@
 package mvc;
 import dto.EstudianteDTO;
+import mvc.excepciones.ControladorException;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -92,19 +93,17 @@ public class VistaConstancias extends JFrame implements ISuscriptor {
             public void changedUpdate(DocumentEvent e) { onChange(); }
 
             private void onChange() {
-                String texto = inputId.getText().trim();
-                if (texto.isEmpty()) {
-                    return;
-                }
-                try {
-                    int id = Integer.parseInt(texto);
-                    controlador.setFiltroEstudiantes(id);
-                } catch (NumberFormatException sinUso) {}
+                String id = inputId.getText().trim();
+                controlador.setFiltroEstudiantes(id);
             }
         });
 
         btnGenerar.addActionListener(e -> {
-            controlador.generarConstancia();
+            try {
+                controlador.generarConstancia();
+            } catch (ControladorException ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
         });
     }
 

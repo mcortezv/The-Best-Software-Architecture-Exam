@@ -1,5 +1,7 @@
 package mvc;
 import dto.EstudianteDTO;
+import mvc.excepciones.ControladorException;
+import mvc.excepciones.ModeloException;
 
 public class Controlador implements IControlador {
     private IModeloEscritura modelo;
@@ -8,7 +10,7 @@ public class Controlador implements IControlador {
         this.modelo = modelo;
     }
 
-    public void setFiltroEstudiantes(int filtro){
+    public void setFiltroEstudiantes(String filtro){
         modelo.setFiltroEstudiantes(filtro);
     }
 
@@ -17,6 +19,10 @@ public class Controlador implements IControlador {
     }
 
     public void generarConstancia(){
-        modelo.generarConstancia();
+        try {
+            modelo.generarConstancia();
+        } catch (ModeloException ex) {
+            throw new ControladorException(ex.getMessage());
+        }
     }
 }
