@@ -5,6 +5,8 @@ import mvc.VistaConstancias;
 
 /**
  * The type Main.
+ *
+ * @author Cortez, Manuel;
  */
 public class Main {
 

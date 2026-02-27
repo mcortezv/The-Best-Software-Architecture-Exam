@@ -3,6 +3,8 @@ import dto.EstudianteDTO;
 
 /**
  * The interface Controlador.
+ *
+ * @author Cortez, Manuel;
  */
 public interface IControlador {
 

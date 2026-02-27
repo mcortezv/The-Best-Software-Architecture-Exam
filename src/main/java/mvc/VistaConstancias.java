@@ -9,6 +9,8 @@ import java.awt.*;
 
 /**
  * The type Vista constancias.
+ *
+ * @author Cortez, Manuel;
  */
 public class VistaConstancias extends JFrame implements ISuscriptor {
     private IControlador controlador;

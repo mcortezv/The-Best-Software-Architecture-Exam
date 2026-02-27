@@ -8,6 +8,8 @@ import java.util.List;
 
 /**
  * The type Estudiante mapper.
+ *
+ * @author Cortez, Manuel;
  */
 public class EstudianteMapper {
 

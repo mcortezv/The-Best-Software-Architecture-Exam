@@ -4,6 +4,8 @@ import dto.ConstanciaDTO;
 
 /**
  * The type Constancia mapper.
+ *
+ * @author Cortez, Manuel;
  */
 public class ConstanciaMapper {
 

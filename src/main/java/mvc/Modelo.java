@@ -10,6 +10,8 @@ import java.util.List;
 
 /**
  * The type Modelo.
+ *
+ * @author Cortez, Manuel;
  */
 public class Modelo implements IModeloLectura, IModeloEscritura {
     private IDominio registroEstudiantes;

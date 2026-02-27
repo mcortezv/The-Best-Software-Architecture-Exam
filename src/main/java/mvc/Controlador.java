@@ -5,6 +5,8 @@ import mvc.excepciones.ModeloException;
 
 /**
  * The type Controlador.
+ *
+ * @author Cortez, Manuel;
  */
 public class Controlador implements IControlador {
     private IModeloEscritura modelo;

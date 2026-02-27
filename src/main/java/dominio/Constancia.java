@@ -3,6 +3,8 @@ import java.time.LocalDate;
 
 /**
  * The type Constancia.
+ *
+ * @author Cortez, Manuel;
  */
 public class Constancia {
     private Estudiante estudiante;

@@ -4,6 +4,8 @@ import java.util.List;
 
 /**
  * The interface Modelo lectura.
+ *
+ * @author Cortez, Manuel;
  */
 public interface IModeloLectura {
 

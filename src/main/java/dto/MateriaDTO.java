@@ -3,6 +3,8 @@ import java.time.LocalTime;
 
 /**
  * The type Materia dto.
+ *
+ * @author Cortez, Manuel;
  */
 public class MateriaDTO {
     private int codigo;

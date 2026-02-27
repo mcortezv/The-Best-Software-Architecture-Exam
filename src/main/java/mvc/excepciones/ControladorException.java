@@ -2,6 +2,8 @@ package mvc.excepciones;
 
 /**
  * The type Controlador exception.
+ *
+ * @author Cortez, Manuel;
  */
 public class ControladorException extends RuntimeException {
 

@@ -6,6 +6,8 @@ import java.util.List;
 
 /**
  * The type Ui tabla estudiantes.
+ *
+ * @author Cortez, Manuel;
  */
 public class UITablaEstudiantes extends AbstractTableModel {
     private List<EstudianteDTO> estudiantes;

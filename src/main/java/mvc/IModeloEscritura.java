@@ -3,6 +3,8 @@ import dto.EstudianteDTO;
 
 /**
  * The interface Modelo escritura.
+ *
+ * @author Cortez, Manuel;
  */
 public interface IModeloEscritura {
 

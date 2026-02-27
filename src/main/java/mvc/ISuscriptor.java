@@ -2,6 +2,8 @@ package mvc;
 
 /**
  * The interface Suscriptor.
+ *
+ * @author Cortez, Manuel;
  */
 public interface ISuscriptor {
 

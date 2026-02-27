@@ -4,6 +4,8 @@ import dto.MateriaDTO;
 
 /**
  * The type Materia mapper.
+ *
+ * @author Cortez, Manuel;
  */
 public class MateriaMapper {
 

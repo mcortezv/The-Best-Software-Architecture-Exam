@@ -4,6 +4,8 @@ import java.util.List;
 
 /**
  * The type Registro estudiantes.
+ *
+ * @author Cortez, Manuel;
  */
 public class RegistroEstudiantes implements IDominio {
     private List<Estudiante> estudiantes;

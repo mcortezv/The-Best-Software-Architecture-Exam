@@ -2,6 +2,8 @@ package mvc.excepciones;
 
 /**
  * The type Modelo exception.
+ *
+ * @author Cortez, Manuel;
  */
 public class ModeloException extends RuntimeException {
 

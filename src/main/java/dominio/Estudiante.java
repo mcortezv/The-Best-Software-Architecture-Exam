@@ -3,6 +3,8 @@ import java.util.List;
 
 /**
  * The type Estudiante.
+ *
+ * @author Cortez, Manuel;
  */
 public class Estudiante {
     private int id;

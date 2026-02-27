@@ -3,6 +3,8 @@ import java.util.List;
 
 /**
  * The interface Dominio.
+ *
+ * @author Cortez, Manuel;
  */
 public interface IDominio {
 
