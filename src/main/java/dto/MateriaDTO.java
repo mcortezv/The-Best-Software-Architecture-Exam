@@ -10,14 +10,6 @@ public class MateriaDTO {
 
     public MateriaDTO() {}
 
-    public MateriaDTO(int codigo, String nombre, LocalTime horaInicio, LocalTime horaFin, String dias) {
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.horaInicio = horaInicio;
-        this.horaFin = horaFin;
-        this.dias = dias;
-    }
-
     public int getCodigo() {
         return codigo;
     }

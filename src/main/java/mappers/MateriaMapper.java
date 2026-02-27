@@ -4,8 +4,6 @@ import dto.MateriaDTO;
 
 public class MateriaMapper {
 
-    private MateriaMapper(){}
-
     public static MateriaDTO toDTO(Materia materia){
         MateriaDTO dto = new MateriaDTO();
         dto.setCodigo(materia.getCodigo());

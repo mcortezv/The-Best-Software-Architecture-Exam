@@ -12,14 +12,6 @@ public class ConstanciaDTO {
 
     public ConstanciaDTO() {}
 
-    public ConstanciaDTO(EstudianteDTO estudiante, int cicloLectivo, LocalDate cicloFechaInicio,  LocalDate cicloFechaFin, LocalDate fechaConstancia) {
-        this.estudiante = estudiante;
-        this.cicloLectivo = cicloLectivo;
-        this.cicloFechaInicio = cicloFechaInicio;
-        this.cicloFechaFin = cicloFechaFin;
-        this.fechaConstancia = fechaConstancia;
-    }
-
     public LocalDate getCicloFechaFin() {
         return cicloFechaFin;
     }
@@ -58,14 +50,6 @@ public class ConstanciaDTO {
 
     public void setFechaConstancia(LocalDate fechaConstancia) {
         this.fechaConstancia = fechaConstancia;
-    }
-
-    public String getFirma() {
-        return firma;
-    }
-
-    public String getLocalidad() {
-        return localidad;
     }
 
     @Override

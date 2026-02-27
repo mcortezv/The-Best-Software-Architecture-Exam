@@ -67,8 +67,4 @@ public class Estudiante {
     public void setSemestreInscrito(int semestreInscrito) {
         this.semestreInscrito = semestreInscrito;
     }
-
-    public int getCantidadMaterias() {
-        return materias.size();
-    }
 }

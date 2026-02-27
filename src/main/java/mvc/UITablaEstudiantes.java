@@ -10,10 +10,6 @@ public class UITablaEstudiantes extends AbstractTableModel {
 
     public UITablaEstudiantes() {}
 
-    public UITablaEstudiantes(List<EstudianteDTO> estudiantes) {
-        this.estudiantes = estudiantes;
-    }
-
     @Override
     public int getRowCount() {
         return estudiantes.size();
