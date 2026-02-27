@@ -1,5 +1,6 @@
 package mvc;
 import dto.EstudianteDTO;
+import mvc.excepciones.ControladorException;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -98,7 +99,11 @@ public class VistaConstancias extends JFrame implements ISuscriptor {
         });
 
         btnGenerar.addActionListener(e -> {
-            controlador.generarConstancia();
+            try {
+                controlador.generarConstancia();
+            } catch (ControladorException ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
         });
     }
 

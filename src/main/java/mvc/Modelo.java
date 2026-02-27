@@ -3,6 +3,7 @@ import dominio.*;
 import dto.EstudianteDTO;
 import mappers.ConstanciaMapper;
 import mappers.EstudianteMapper;
+import mvc.excepciones.ModeloException;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,9 +51,10 @@ public class Modelo implements IModeloLectura, IModeloEscritura {
 
     @Override
     public void generarConstancia() {
-        if (estudianteSelecionado != null) {
-            constanciaGenerada = registroEstudiantes.generarConstancia(estudianteSelecionado);
+        if (estudianteSelecionado == null) {
+            throw new ModeloException("No se selecciono ningun estudiante");
         }
+        constanciaGenerada = registroEstudiantes.generarConstancia(estudianteSelecionado);
         notificarSuscriptores();
     }
 
