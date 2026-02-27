@@ -1,6 +1,9 @@
 package dto;
 import java.time.LocalDate;
 
+/**
+ * The type Constancia dto.
+ */
 public class ConstanciaDTO {
     private EstudianteDTO estudiante;
     private int cicloLectivo;
@@ -10,44 +13,52 @@ public class ConstanciaDTO {
     private final String firma = "Ing. Jose Felizardo Acosta Quintero";
     private final String localidad = "Ciudad Obregón, Sonora";
 
+    /**
+     * Instantiates a new Constancia dto.
+     */
     public ConstanciaDTO() {}
 
-    public LocalDate getCicloFechaFin() {
-        return cicloFechaFin;
-    }
-
+    /**
+     * Sets ciclo fecha fin.
+     *
+     * @param cicloFechaFin the ciclo fecha fin
+     */
     public void setCicloFechaFin(LocalDate cicloFechaFin) {
         this.cicloFechaFin = cicloFechaFin;
     }
 
-    public LocalDate getCicloFechaInicio() {
-        return cicloFechaInicio;
-    }
-
+    /**
+     * Sets ciclo fecha inicio.
+     *
+     * @param cicloFechaInicio the ciclo fecha inicio
+     */
     public void setCicloFechaInicio(LocalDate cicloFechaInicio) {
         this.cicloFechaInicio = cicloFechaInicio;
     }
 
-    public int getCicloLectivo() {
-        return cicloLectivo;
-    }
-
+    /**
+     * Sets ciclo lectivo.
+     *
+     * @param cicloLectivo the ciclo lectivo
+     */
     public void setCicloLectivo(int cicloLectivo) {
         this.cicloLectivo = cicloLectivo;
     }
 
-    public EstudianteDTO getEstudiante() {
-        return estudiante;
-    }
-
+    /**
+     * Sets estudiante.
+     *
+     * @param estudiante the estudiante
+     */
     public void setEstudiante(EstudianteDTO estudiante) {
         this.estudiante = estudiante;
     }
 
-    public LocalDate getFechaConstancia() {
-        return fechaConstancia;
-    }
-
+    /**
+     * Sets fecha constancia.
+     *
+     * @param fechaConstancia the fecha constancia
+     */
     public void setFechaConstancia(LocalDate fechaConstancia) {
         this.fechaConstancia = fechaConstancia;
     }

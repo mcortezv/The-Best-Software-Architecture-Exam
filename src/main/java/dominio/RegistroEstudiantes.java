@@ -2,6 +2,9 @@ package dominio;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * The type Registro estudiantes.
+ */
 public class RegistroEstudiantes implements IDominio {
     private List<Estudiante> estudiantes;
     private final int cicloLectivo = 6;
@@ -9,7 +12,12 @@ public class RegistroEstudiantes implements IDominio {
     private final LocalDate cicloFechaFin = LocalDate.of(2026, 5, 23);
     private final LocalDate fechaConstancia = LocalDate.now();
 
-    // Mock
+    /**
+     * Instantiates a new Registro estudiantes.
+     *
+     * @param estudiantes the estudiantes
+     * Mock
+     */
     public RegistroEstudiantes(List<Estudiante> estudiantes) {
         this.estudiantes = estudiantes;
     }

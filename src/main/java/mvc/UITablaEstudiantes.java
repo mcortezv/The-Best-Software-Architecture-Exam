@@ -4,10 +4,16 @@ import javax.swing.table.AbstractTableModel;
 import java.awt.*;
 import java.util.List;
 
+/**
+ * The type Ui tabla estudiantes.
+ */
 public class UITablaEstudiantes extends AbstractTableModel {
     private List<EstudianteDTO> estudiantes;
     private final String[] columnas = {"Matricula", "Nombre", "Carrera"};
 
+    /**
+     * Instantiates a new Ui tabla estudiantes.
+     */
     public UITablaEstudiantes() {}
 
     @Override
@@ -15,14 +21,29 @@ public class UITablaEstudiantes extends AbstractTableModel {
         return estudiantes.size();
     }
 
+    /**
+     * Get columnas string [ ].
+     *
+     * @return the string [ ]
+     */
     public String[] getColumnas() {
         return columnas;
     }
 
+    /**
+     * Gets estudiantes.
+     *
+     * @return the estudiantes
+     */
     public List<EstudianteDTO> getEstudiantes() {
         return estudiantes;
     }
 
+    /**
+     * Sets estudiantes.
+     *
+     * @param estudiantes the estudiantes
+     */
     public void setEstudiantes(List<EstudianteDTO> estudiantes) {
         this.estudiantes = estudiantes;
         fireTableDataChanged();
@@ -49,6 +70,12 @@ public class UITablaEstudiantes extends AbstractTableModel {
         };
     }
 
+    /**
+     * Gets estudiante at.
+     *
+     * @param rowIndex the row index
+     * @return the estudiante at
+     */
     public EstudianteDTO getEstudianteAt(int rowIndex) {
         return estudiantes.get(rowIndex);
     }

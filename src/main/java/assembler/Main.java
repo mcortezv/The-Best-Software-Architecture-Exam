@@ -3,8 +3,14 @@ import mvc.Controlador;
 import mvc.Modelo;
 import mvc.VistaConstancias;
 
+/**
+ * The type Main.
+ */
 public class Main {
 
+    /**
+     * Main.
+     */
     static void main() {
 
         Modelo modelo = new Modelo();

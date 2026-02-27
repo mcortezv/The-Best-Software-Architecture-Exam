@@ -6,8 +6,17 @@ import dto.MateriaDTO;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Estudiante mapper.
+ */
 public class EstudianteMapper {
 
+    /**
+     * To dto estudiante dto.
+     *
+     * @param estudiante the estudiante
+     * @return the estudiante dto
+     */
     public static EstudianteDTO toDTO(Estudiante estudiante){
         EstudianteDTO dto = new EstudianteDTO();
         dto.setId(estudiante.getId());
@@ -23,6 +32,12 @@ public class EstudianteMapper {
         return  dto;
     }
 
+    /**
+     * To entity estudiante.
+     *
+     * @param dto the dto
+     * @return the estudiante
+     */
     public static Estudiante toEntity(EstudianteDTO dto){
         Estudiante entity = new Estudiante();
         entity.setId(dto.getId());

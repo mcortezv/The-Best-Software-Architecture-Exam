@@ -7,6 +7,9 @@ import javax.swing.event.DocumentListener;
 import javax.swing.plaf.basic.BasicButtonUI;
 import java.awt.*;
 
+/**
+ * The type Vista constancias.
+ */
 public class VistaConstancias extends JFrame implements ISuscriptor {
     private IControlador controlador;
     private IModeloLectura modeloLectura;
@@ -19,6 +22,12 @@ public class VistaConstancias extends JFrame implements ISuscriptor {
     private UITablaEstudiantes uiTablaEstudiantes;
     private JButton btnGenerar;
 
+    /**
+     * Instantiates a new Vista constancias.
+     *
+     * @param controlador   the controlador
+     * @param modeloLectura the modelo lectura
+     */
     public VistaConstancias(IControlador controlador, IModeloLectura modeloLectura) {
         this.controlador = controlador;
         this.modeloLectura = modeloLectura;
