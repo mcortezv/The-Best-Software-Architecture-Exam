@@ -13,7 +13,7 @@ public class Main {
     /**
      * Main.
      */
-    static void main() {
+    public static void main(String[] args) {
 
         Modelo modelo = new Modelo();
         Controlador controlador = new Controlador(modelo);
