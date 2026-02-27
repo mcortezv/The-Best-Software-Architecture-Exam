@@ -46,6 +46,7 @@ public class Modelo implements IModeloLectura, IModeloEscritura {
 
     @Override
     public void setEstudianteSelecionado(EstudianteDTO dto) {
+        constanciaGenerada = null;
         estudianteSelecionado = EstudianteMapper.toEntity(dto);
         notificarSuscriptores();
     }
