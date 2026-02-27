@@ -8,8 +8,6 @@ import java.util.List;
 
 public class EstudianteMapper {
 
-    private EstudianteMapper(){}
-
     public static EstudianteDTO toDTO(Estudiante estudiante){
         EstudianteDTO dto = new EstudianteDTO();
         dto.setId(estudiante.getId());

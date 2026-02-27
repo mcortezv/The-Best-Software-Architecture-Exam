@@ -9,8 +9,6 @@ public class RegistroEstudiantes implements IDominio {
     private final LocalDate cicloFechaFin = LocalDate.of(2026, 5, 23);
     private final LocalDate fechaConstancia = LocalDate.now();
 
-    public RegistroEstudiantes() {}
-
     // Mock
     public RegistroEstudiantes(List<Estudiante> estudiantes) {
         this.estudiantes = estudiantes;

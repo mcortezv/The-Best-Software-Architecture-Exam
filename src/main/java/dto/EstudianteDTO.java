@@ -11,15 +11,6 @@ public class EstudianteDTO {
 
     public EstudianteDTO() {}
 
-    public EstudianteDTO(int id, String nombre, String correo, String carrera, int semestreInscrito, List<MateriaDTO> materias) {
-        this.id = id;
-        this.nombre = nombre;
-        this.correo = correo;
-        this.carrera = carrera;
-        this.semestreInscrito = semestreInscrito;
-        this.materias = materias;
-    }
-
     public String getCorreo() {
         return correo;
     }
