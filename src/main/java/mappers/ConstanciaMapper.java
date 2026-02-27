@@ -11,7 +11,7 @@ public class ConstanciaMapper {
         dto.setEstudiante(EstudianteMapper.toDTO(constancia.getEstudiante()));
         dto.setCicloLectivo(constancia.getCicloLectivo());
         dto.setCicloFechaInicio(constancia.getCicloFechaInicio());
-        dto.setCicloFechaInicio(constancia.getCicloFechaInicio());
+        dto.setCicloFechaFin(constancia.getCicloFechaFin());
         dto.setFechaConstancia(constancia.getFechaConstancia());
         return dto;
     }
@@ -21,7 +21,7 @@ public class ConstanciaMapper {
         entity.setEstudiante(EstudianteMapper.toEntity(dto.getEstudiante()));
         entity.setCicloLectivo(dto.getCicloLectivo());
         entity.setCicloFechaInicio(dto.getCicloFechaInicio());
-        entity.setCicloFechaInicio(dto.getCicloFechaInicio());
+        entity.setCicloFechaFin(dto.getCicloFechaFin());
         entity.setFechaConstancia(dto.getFechaConstancia());
         return entity;
     }

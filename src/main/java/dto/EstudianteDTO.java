@@ -71,4 +71,14 @@ public class EstudianteDTO {
     public int getCantidadMaterias() {
         return materias.size();
     }
+
+    @Override
+    public String toString() {
+        return nombre + "\n" +
+                id + "\n" +
+                correo + "\n" +
+                "Programa: " + carrera + "\n" +
+                "Semestre: " + semestreInscrito + "\n" +
+                "Numero Materias: " + getCantidadMaterias() + "\n";
+    }
 }
