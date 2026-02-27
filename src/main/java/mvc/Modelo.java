@@ -1,8 +1,5 @@
 package mvc;
-import dominio.Constancia;
-import dominio.Estudiante;
-import dominio.Materia;
-import dominio.RegistroEstudiantes;
+import dominio.*;
 import dto.EstudianteDTO;
 import mappers.ConstanciaMapper;
 import mappers.EstudianteMapper;
@@ -11,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Modelo implements IModeloLectura, IModeloEscritura {
-    private RegistroEstudiantes registroEstudiantes;
-    private Integer filtroActual;
+    private IDominio registroEstudiantes;
+    private String filtroActual;
     private Estudiante estudianteSelecionado;
     private Constancia constanciaGenerada;
     private final List<ISuscriptor> suscriptores = new ArrayList<>();
@@ -39,7 +36,7 @@ public class Modelo implements IModeloLectura, IModeloEscritura {
     }
 
     @Override
-    public void setFiltroEstudiantes(int filtro) {
+    public void setFiltroEstudiantes(String filtro) {
         filtroActual = filtro;
         notificarSuscriptores();
     }
@@ -62,7 +59,7 @@ public class Modelo implements IModeloLectura, IModeloEscritura {
     @Override
     public List<EstudianteDTO> getEstudiantes() {
         List<Estudiante> estudiantesFiltrados;
-        if (filtroActual != null){
+        if (filtroActual != null && !filtroActual.isEmpty()) {
             estudiantesFiltrados = registroEstudiantes.getEstudiantesFiltro(filtroActual);
         } else {
             estudiantesFiltrados = registroEstudiantes.getEstudiantes();

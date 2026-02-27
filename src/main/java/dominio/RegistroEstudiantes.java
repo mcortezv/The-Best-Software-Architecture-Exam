@@ -20,7 +20,7 @@ public class RegistroEstudiantes implements IDominio {
     }
 
     @Override
-    public List<Estudiante>  getEstudiantesFiltro(int filtro) {
+    public List<Estudiante>  getEstudiantesFiltro(String filtro) {
         return estudiantes.stream().filter(e -> String.valueOf(e.getId()).contains(String.valueOf(filtro))).toList();
     }
 

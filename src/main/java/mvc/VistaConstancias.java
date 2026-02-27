@@ -92,14 +92,8 @@ public class VistaConstancias extends JFrame implements ISuscriptor {
             public void changedUpdate(DocumentEvent e) { onChange(); }
 
             private void onChange() {
-                String texto = inputId.getText().trim();
-                if (texto.isEmpty()) {
-                    return;
-                }
-                try {
-                    int id = Integer.parseInt(texto);
-                    controlador.setFiltroEstudiantes(id);
-                } catch (NumberFormatException sinUso) {}
+                String id = inputId.getText().trim();
+                controlador.setFiltroEstudiantes(id);
             }
         });
 

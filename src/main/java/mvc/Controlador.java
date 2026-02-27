@@ -8,7 +8,7 @@ public class Controlador implements IControlador {
         this.modelo = modelo;
     }
 
-    public void setFiltroEstudiantes(int filtro){
+    public void setFiltroEstudiantes(String filtro){
         modelo.setFiltroEstudiantes(filtro);
     }
 
