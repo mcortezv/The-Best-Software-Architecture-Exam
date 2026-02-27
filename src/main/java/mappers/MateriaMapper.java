@@ -2,8 +2,19 @@ package mappers;
 import dominio.Materia;
 import dto.MateriaDTO;
 
+/**
+ * The type Materia mapper.
+ *
+ * @author Cortez, Manuel;
+ */
 public class MateriaMapper {
 
+    /**
+     * To dto materia dto.
+     *
+     * @param materia the materia
+     * @return the materia dto
+     */
     public static MateriaDTO toDTO(Materia materia){
         MateriaDTO dto = new MateriaDTO();
         dto.setCodigo(materia.getCodigo());
@@ -14,6 +25,12 @@ public class MateriaMapper {
         return  dto;
     }
 
+    /**
+     * To entity materia.
+     *
+     * @param dto the dto
+     * @return the materia
+     */
     public static Materia toEntity(MateriaDTO dto){
         Materia materia = new Materia();
         materia.setCodigo(dto.getCodigo());

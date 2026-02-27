@@ -8,6 +8,11 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Modelo.
+ *
+ * @author Cortez, Manuel;
+ */
 public class Modelo implements IModeloLectura, IModeloEscritura {
     private IDominio registroEstudiantes;
     private String filtroActual;
@@ -15,7 +20,10 @@ public class Modelo implements IModeloLectura, IModeloEscritura {
     private Constancia constanciaGenerada;
     private final List<ISuscriptor> suscriptores = new ArrayList<>();
 
-    // Mock
+    /**
+     * Instantiates a new Modelo.
+     * Mock
+     */
     public Modelo() {
 
         List<Estudiante> estudiantes = new ArrayList();
@@ -84,10 +92,18 @@ public class Modelo implements IModeloLectura, IModeloEscritura {
         return null;
     }
 
+    /**
+     * Suscribir.
+     *
+     * @param suscriptor the suscriptor
+     */
     public void suscribir(ISuscriptor suscriptor) {
         suscriptores.add(suscriptor);
     }
 
+    /**
+     * Notificar suscriptores.
+     */
     public void notificarSuscriptores() {
         for (ISuscriptor suscriptor : suscriptores) {
             suscriptor.update(this);

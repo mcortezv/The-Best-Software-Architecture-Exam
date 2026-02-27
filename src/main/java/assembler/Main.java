@@ -3,8 +3,16 @@ import mvc.Controlador;
 import mvc.Modelo;
 import mvc.VistaConstancias;
 
+/**
+ * The type Main.
+ *
+ * @author Cortez, Manuel;
+ */
 public class Main {
 
+    /**
+     * Main.
+     */
     static void main() {
 
         Modelo modelo = new Modelo();
