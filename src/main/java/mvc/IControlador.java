@@ -3,7 +3,7 @@ import dto.EstudianteDTO;
 
 public interface IControlador {
 
-    void setFiltroEstudiantes(int filtro);
+    void setFiltroEstudiantes(String filtro);
 
     void setEstudianteSelecionado(EstudianteDTO dto);
 

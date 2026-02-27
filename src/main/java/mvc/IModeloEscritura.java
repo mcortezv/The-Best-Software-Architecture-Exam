@@ -3,7 +3,7 @@ import dto.EstudianteDTO;
 
 public interface IModeloEscritura {
 
-    void setFiltroEstudiantes(int filtro);
+    void setFiltroEstudiantes(String filtro);
 
     void setEstudianteSelecionado(EstudianteDTO dto);
 
