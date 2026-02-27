@@ -1,6 +1,11 @@
 package dominio;
 import java.time.LocalDate;
 
+/**
+ * The type Constancia.
+ *
+ * @author Cortez, Manuel;
+ */
 public class Constancia {
     private Estudiante estudiante;
     private int cicloLectivo;
@@ -10,8 +15,20 @@ public class Constancia {
     private final String firma = "Ing. Jose Felizardo Acosta Quintero";
     private final String localidad = "Ciudad Obregón, Sonora";
 
+    /**
+     * Instantiates a new Constancia.
+     */
     public Constancia() {}
 
+    /**
+     * Instantiates a new Constancia.
+     *
+     * @param estudiante       the estudiante
+     * @param cicloLectivo     the ciclo lectivo
+     * @param cicloFechaInicio the ciclo fecha inicio
+     * @param cicloFechaFin    the ciclo fecha fin
+     * @param fechaConstancia  the fecha constancia
+     */
     public Constancia(Estudiante estudiante, int cicloLectivo, LocalDate cicloFechaInicio,  LocalDate cicloFechaFin, LocalDate fechaConstancia) {
         this.estudiante = estudiante;
         this.cicloLectivo = cicloLectivo;
@@ -20,43 +37,48 @@ public class Constancia {
         this.fechaConstancia = fechaConstancia;
     }
 
+    /**
+     * Gets ciclo fecha fin.
+     *
+     * @return the ciclo fecha fin
+     */
     public LocalDate getCicloFechaFin() {
         return cicloFechaFin;
     }
 
-    public void setCicloFechaFin(LocalDate cicloFechaFin) {
-        this.cicloFechaFin = cicloFechaFin;
-    }
-
+    /**
+     * Gets ciclo fecha inicio.
+     *
+     * @return the ciclo fecha inicio
+     */
     public LocalDate getCicloFechaInicio() {
         return cicloFechaInicio;
     }
 
-    public void setCicloFechaInicio(LocalDate cicloFechaInicio) {
-        this.cicloFechaInicio = cicloFechaInicio;
-    }
-
+    /**
+     * Gets ciclo lectivo.
+     *
+     * @return the ciclo lectivo
+     */
     public int getCicloLectivo() {
         return cicloLectivo;
     }
 
-    public void setCicloLectivo(int cicloLectivo) {
-        this.cicloLectivo = cicloLectivo;
-    }
-
+    /**
+     * Gets estudiante.
+     *
+     * @return the estudiante
+     */
     public Estudiante getEstudiante() {
         return estudiante;
     }
 
-    public void setEstudiante(Estudiante estudiante) {
-        this.estudiante = estudiante;
-    }
-
+    /**
+     * Gets fecha constancia.
+     *
+     * @return the fecha constancia
+     */
     public LocalDate getFechaConstancia() {
         return fechaConstancia;
-    }
-
-    public void setFechaConstancia(LocalDate fechaConstancia) {
-        this.fechaConstancia = fechaConstancia;
     }
 }
