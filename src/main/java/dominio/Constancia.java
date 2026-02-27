@@ -59,12 +59,4 @@ public class Constancia {
     public void setFechaConstancia(LocalDate fechaConstancia) {
         this.fechaConstancia = fechaConstancia;
     }
-
-    public String getFirma() {
-        return firma;
-    }
-
-    public String getLocalidad() {
-        return localidad;
-    }
 }

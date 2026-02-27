@@ -4,8 +4,6 @@ import dto.EstudianteDTO;
 public class Controlador implements IControlador {
     private IModeloEscritura modelo;
 
-    public Controlador() {}
-
     public Controlador(IModeloEscritura modelo) {
         this.modelo = modelo;
     }
