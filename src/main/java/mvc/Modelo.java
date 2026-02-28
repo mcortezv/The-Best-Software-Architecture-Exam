@@ -14,7 +14,7 @@ import java.util.List;
  * @author Cortez, Manuel;
  */
 public class Modelo implements IModeloLectura, IModeloEscritura {
-    private IDominio registroEstudiantes;
+    private IDominio registroAcademico;
     private String filtroActual;
     private Estudiante estudianteSelecionado;
     private Constancia constanciaGenerada;
@@ -41,7 +41,7 @@ public class Modelo implements IModeloLectura, IModeloEscritura {
         estudiantes.add(new Estudiante(252321, "German Morelli", "german@gmail.com", "Ingenieria en Software", 2, materias));
         estudiantes.add(new Estudiante(254276, "Cristian Devora", "cristian@gmail.com", "Ingenieria en Software", 6, materias));
 
-        this.registroEstudiantes = new RegistroEstudiantes(estudiantes);
+        this.registroAcademico = new RegistroAcademico(estudiantes);
     }
 
     @Override
@@ -62,7 +62,7 @@ public class Modelo implements IModeloLectura, IModeloEscritura {
         if (estudianteSelecionado == null) {
             throw new ModeloException("No se selecciono ningun estudiante");
         }
-        constanciaGenerada = registroEstudiantes.generarConstancia(estudianteSelecionado);
+        constanciaGenerada = registroAcademico.generarConstancia(estudianteSelecionado);
         notificarSuscriptores();
     }
 
@@ -70,9 +70,9 @@ public class Modelo implements IModeloLectura, IModeloEscritura {
     public List<EstudianteDTO> getEstudiantes() {
         List<Estudiante> estudiantesFiltrados;
         if (filtroActual != null && !filtroActual.isEmpty()) {
-            estudiantesFiltrados = registroEstudiantes.getEstudiantesFiltro(filtroActual);
+            estudiantesFiltrados = registroAcademico.getEstudiantesFiltro(filtroActual);
         } else {
-            estudiantesFiltrados = registroEstudiantes.getEstudiantes();
+            estudiantesFiltrados = registroAcademico.getEstudiantes();
         }
         List<EstudianteDTO> estudiantesDTO = new ArrayList();
         for (Estudiante estudiante : estudiantesFiltrados) {
