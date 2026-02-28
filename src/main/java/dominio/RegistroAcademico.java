@@ -3,11 +3,11 @@ import java.time.LocalDate;
 import java.util.List;
 
 /**
- * The type Registro estudiantes.
+ * The type Registro academico.
  *
  * @author Cortez, Manuel;
  */
-public class RegistroEstudiantes implements IDominio {
+public class RegistroAcademico implements IDominio {
     private List<Estudiante> estudiantes;
     private final int cicloLectivo = 6;
     private final LocalDate cicloFechaInicio = LocalDate.of(2026, 1, 19);
@@ -15,12 +15,12 @@ public class RegistroEstudiantes implements IDominio {
     private final LocalDate fechaConstancia = LocalDate.now();
 
     /**
-     * Instantiates a new Registro estudiantes.
+     * Instantiates a new Registro academico.
      *
      * @param estudiantes the estudiantes
      * Mock
      */
-    public RegistroEstudiantes(List<Estudiante> estudiantes) {
+    public RegistroAcademico(List<Estudiante> estudiantes) {
         this.estudiantes = estudiantes;
     }
 
