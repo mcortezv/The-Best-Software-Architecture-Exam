@@ -19,6 +19,12 @@ public class Modelo implements IModeloLectura, IModeloEscritura {
     private Estudiante estudianteSelecionado;
     private Constancia constanciaGenerada;
     private final List<ISuscriptor> suscriptores = new ArrayList<>();
+    
+    // Cache de datos pre-procesados
+    private List<EstudianteDTO> estudiantesDTOCache;
+    private String contenidoDetalleCache;
+    private boolean cacheEstudiantesValida = false;
+    private boolean cacheContenidoValida = false;
 
     /**
      * Instantiates a new Modelo.
@@ -42,11 +48,16 @@ public class Modelo implements IModeloLectura, IModeloEscritura {
         estudiantes.add(new Estudiante(254276, "Cristian Devora", "cristian@gmail.com", "Ingenieria en Software", 6, materias));
 
         this.registroAcademico = new RegistroAcademico(estudiantes);
+        
+        // Inicializar cache con datos iniciales
+        regenerarCacheEstudiantes();
+        regenerarCacheContenido();
     }
 
     @Override
     public void setFiltroEstudiantes(String filtro) {
         filtroActual = filtro;
+        regenerarCacheEstudiantes();
         notificarSuscriptores();
     }
 
@@ -54,6 +65,7 @@ public class Modelo implements IModeloLectura, IModeloEscritura {
     public void setEstudianteSelecionado(EstudianteDTO dto) {
         constanciaGenerada = null;
         estudianteSelecionado = EstudianteMapper.toEntity(dto);
+        regenerarCacheContenido();
         notificarSuscriptores();
     }
 
@@ -63,33 +75,24 @@ public class Modelo implements IModeloLectura, IModeloEscritura {
             throw new ModeloException("No se selecciono ningun estudiante");
         }
         constanciaGenerada = registroAcademico.generarConstancia(estudianteSelecionado);
+        regenerarCacheContenido();
         notificarSuscriptores();
     }
 
     @Override
     public List<EstudianteDTO> getEstudiantes() {
-        List<Estudiante> estudiantesFiltrados;
-        if (filtroActual != null && !filtroActual.isEmpty()) {
-            estudiantesFiltrados = registroAcademico.getEstudiantesFiltro(filtroActual);
-        } else {
-            estudiantesFiltrados = registroAcademico.getEstudiantes();
+        if (!cacheEstudiantesValida) {
+            regenerarCacheEstudiantes();
         }
-        List<EstudianteDTO> estudiantesDTO = new ArrayList();
-        for (Estudiante estudiante : estudiantesFiltrados) {
-            estudiantesDTO.add(EstudianteMapper.toDTO(estudiante));
-        }
-        return estudiantesDTO;
+        return estudiantesDTOCache;
     }
 
     @Override
     public String getContenidoDetalle() {
-        if (constanciaGenerada != null) {
-            return ConstanciaMapper.toDTO(constanciaGenerada).toString();
+        if (!cacheContenidoValida) {
+            regenerarCacheContenido();
         }
-        if (estudianteSelecionado != null) {
-            return EstudianteMapper.toDTO(estudianteSelecionado).toString();
-        }
-        return null;
+        return contenidoDetalleCache;
     }
 
     /**
@@ -108,5 +111,37 @@ public class Modelo implements IModeloLectura, IModeloEscritura {
         for (ISuscriptor suscriptor : suscriptores) {
             suscriptor.update(this);
         }
+    }
+    
+    /**
+     * Regenerar cache de estudiantes.
+     */
+    private void regenerarCacheEstudiantes() {
+        List<Estudiante> estudiantesFiltrados;
+        if (filtroActual != null && !filtroActual.isEmpty()) {
+            estudiantesFiltrados = registroAcademico.getEstudiantesFiltro(filtroActual);
+        } else {
+            estudiantesFiltrados = registroAcademico.getEstudiantes();
+        }
+        
+        estudiantesDTOCache = new ArrayList<>();
+        for (Estudiante estudiante : estudiantesFiltrados) {
+            estudiantesDTOCache.add(EstudianteMapper.toDTO(estudiante));
+        }
+        cacheEstudiantesValida = true;
+    }
+    
+    /**
+     * Regenerar cache de contenido detalle.
+     */
+    private void regenerarCacheContenido() {
+        if (constanciaGenerada != null) {
+            contenidoDetalleCache = ConstanciaMapper.toDTO(constanciaGenerada).toString();
+        } else if (estudianteSelecionado != null) {
+            contenidoDetalleCache = EstudianteMapper.toDTO(estudianteSelecionado).toString();
+        } else {
+            contenidoDetalleCache = null;
+        }
+        cacheContenidoValida = true;
     }
 }
