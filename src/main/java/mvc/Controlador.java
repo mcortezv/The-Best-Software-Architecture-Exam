@@ -8,7 +8,7 @@ import mvc.excepciones.ModeloException;
  *
  * @author Cortez, Manuel;
  */
-public class Controlador implements IControlador {
+public class Controlador {
     private IModeloEscritura modelo;
 
     /**

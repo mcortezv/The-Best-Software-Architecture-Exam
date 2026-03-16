@@ -13,7 +13,7 @@ import java.awt.*;
  * @author Cortez, Manuel;
  */
 public class VistaConstancias extends JFrame implements ISuscriptor {
-    private IControlador controlador;
+    private Controlador controlador;
     private IModeloLectura modeloLectura;
     private JPanel northPanel;
     private JPanel leftPanel;
@@ -30,7 +30,7 @@ public class VistaConstancias extends JFrame implements ISuscriptor {
      * @param controlador   the controlador
      * @param modeloLectura the modelo lectura
      */
-    public VistaConstancias(IControlador controlador, IModeloLectura modeloLectura) {
+    public VistaConstancias(Controlador controlador, IModeloLectura modeloLectura) {
         this.controlador = controlador;
         this.modeloLectura = modeloLectura;
 
